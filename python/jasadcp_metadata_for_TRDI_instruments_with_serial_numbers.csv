@@ -1,0 +1,25 @@
+instrument_name,serial_numbers
+OS-75,"S/N 1508 (in-use unit), S/N 10656 (spare unit)"
+VM-150,127
+VM-150,177
+VM-150,177 VM ADCP electronics (serial number 607)
+VM-150,249
+VM-150,28 (Transducer)
+VM-150,500
+VM-150,ADCP = 536 / XDUC = 449
+VM-150,Ducer = 275
+VM-150,"System 15, Transducer 199"
+VM-150,transducer SN 532
+VM-150,transducer SN 536; chassis SN 631
+VM-150,transducer s/n 171
+VM-150,xduce sn 73
+VM-150,xducer 275
+VM-150,xducer 382
+VM-150,xducer serial no. 382
+VM-150,xducer sn 173
+VM-150,xducer sn 382
+VM-150,xducer sn 73
+VM-300,H
+ZUNCLEAR: Direct-Read 150 kHz Narrowband,S/N 385
+ZUNCLEAR: Vessel-Mount 150 kHz Narrowband,S/N 385
+ZUNCLEAR: Vessel-mounted 150 kHz Narrowband,S/N 355
