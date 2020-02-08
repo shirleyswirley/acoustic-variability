@@ -43,6 +43,10 @@ docker system prune -a
 --> less extreme version of docker system prune
 docker system prune
 
+--> remove image
+docker rmi <container id>
+docker rmi -f <container id>
+
 --> see what docker containers are running
 docker ps
 

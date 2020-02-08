@@ -7,4 +7,4 @@ docker build -t docker_miniconda_adcp:v2 .
 docker run --rm -i -t --mount type=bind,src=/Users/shirleyswirley/Desktop/githubrepos/acoustic-variability,dst=/opt/acoustic-variability -p 8879:8879 docker_miniconda_adcp:v2
 
 --> this one for google cloud
-docker run --rm -i -t --mount type=bind,src=/home/shirlleu/acoustic-variability,dst=/opt/acoustic-variability -p 8877:8877 docker_miniconda_adcp:v2
+docker run --rm -i -t --mount type=bind,src=/home/shirlleu/acoustic-variability,dst=/opt/acoustic-variability -p 8879:8879 docker_miniconda_adcp:v2
