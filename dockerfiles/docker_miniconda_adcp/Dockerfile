@@ -35,4 +35,5 @@ RUN cat global_settings.py helpers.py file_converter.py > file_converter_new.py
 RUN mv file_converter_new.py file_converter.py
 RUN python file_converter.py
 RUN pip install ephem
+RUN conda install astropy
 CMD jupyter lab --notebook-dir=/opt/acoustic-variability --ip='0.0.0.0' --port=8879 --no-browser --allow-root
