@@ -37,4 +37,5 @@ RUN python file_converter.py
 RUN pip install ephem
 RUN conda install astropy
 RUN conda update xarray
+RUN conda install -c conda-forge scikit-image
 CMD jupyter lab --notebook-dir=/opt/acoustic-variability --ip='0.0.0.0' --port=8879 --no-browser --allow-root
