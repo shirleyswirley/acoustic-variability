@@ -1,12 +1,12 @@
 mask = (~np.isnan(nc['lon'])) & (~np.isnan(nc['lat']))
 Sv_lon = nc['lon'].where(mask, drop=True)
+Sv_lon[Sv_lon<0] = Sv_lon[Sv_lon<0] + 360
 Sv_lat = nc['lat'].where(mask, drop=True)
 Sv_depth = nc['depth'].where(mask, drop=True)
 Sv_pflag = nc['pflag'].where(mask, drop=True)
 Sv_pg = nc['pg'].where(mask, drop=True)
 amp = nc['amp'].where(mask, drop=True)
 Tx = nc['tr_temp'].where(mask, drop=True)
-depth = nc['depth'].where(mask, drop=True)
 
 row = df[df['fname']==fname].iloc[0]
 
@@ -33,10 +33,10 @@ elif 'NB' in row['instrument_name']:
     PDBW = get_PDBW_constant(row)
 #print('PDBW: ',PDBW)
 
-R = get_R_tdresolved(row, depth, method_num=5)
+R = get_R_tdresolved(row, Sv_depth, method_num=5)
 #print('R: ',R)
 
-c = calc_c_tdresolved(depth,T=25,S=35)
+c = calc_c_tdresolved(Sv_depth,T=25,S=35)
 #print('c: ',c)
 
 if 'NB' not in row['instrument_name']:
@@ -46,8 +46,8 @@ elif 'NB' in row['instrument_name']:
 #print('C: ',C)
 
 # - ASSUMPTION: temp = 25C, sal = 35psu, pH = 8.1
-Tnow = depth.copy(deep=True); Tnow.name = 'temperature'; Tnow[:,:] = 25
-alpha = calc_alpha_tdresolved(row,depth,c,Tnow,S=35,pH=8.1)
+Tnow = Sv_depth.copy(deep=True); Tnow.name = 'temperature'; Tnow[:,:] = 25
+alpha = calc_alpha_tdresolved(row,Sv_depth,c,Tnow,S=35,pH=8.1)
 #print('alpha: ',alpha)
 
 alphaR = calc_alphaR_tdresolved(alpha,R)
