@@ -10,7 +10,9 @@ Tx = nc['tr_temp'].where(mask, drop=True)
 
 row = df[df['fname']==fname].iloc[0]
 
-# - ASSUMPTION: if no bandwidth for a file; pretend it's narrowband for now
+# -->ASSUMPTION FOR NOW:
+# If there's no bandwidth for a file,
+# say that it's narrowband
 if row['bandwidth']==None:
     row['bandwidth']='narrowband'
 
@@ -45,8 +47,11 @@ elif 'NB' in row['instrument_name']:
     C = get_C_tdresolved(row,c)
 #print('C: ',C)
 
-# - ASSUMPTION: temp = 25C, sal = 35psu, pH = 8.1
-Tnow = Sv_depth.copy(deep=True); Tnow.name = 'temperature'; Tnow[:,:] = 25
+# -->ASSUMPTION FOR NOW:
+# temp = 25C, sal = 35psu, pH = 8.1
+Tnow = Sv_depth.copy(deep=True)
+Tnow.name = 'temperature'
+Tnow[:,:] = 25
 alpha = calc_alpha_tdresolved(row,Sv_depth,c,Tnow,S=35,pH=8.1)
 #print('alpha: ',alpha)
 
