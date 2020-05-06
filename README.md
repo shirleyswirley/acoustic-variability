@@ -1,4 +1,4 @@
-# Using ADCP data to characterize zooplanktonic/micronektonic distribution variability
+# Using ADCP data to characterize zooplanktonic and micronektonic variability
 
 Code in clean_version is discussed, referenced, and used to produce figures in Chapter 6 of the PhD thesis: "Particles, prey, and purse seines: A data-driven investigation into the impacts of climate on biological processes across the global ocean" by Shirley Leung at the University of Washington. A link to the thesis is forthcoming.
 
