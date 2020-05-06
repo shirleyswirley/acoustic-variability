@@ -8,3 +8,6 @@ docker run --rm -i -t --mount type=bind,src=/Users/shirleyswirley/Desktop/github
 
 --> this one for google cloud
 docker run --rm -i -t --mount type=bind,src=/home/shirlleu/acoustic-variability,dst=/opt/acoustic-variability -p 8879:8879 docker_miniconda_adcp:v5
+
+--> this one for google cloud w/ clean_version files
+docker run --rm -i -t --mount type=bind,src=/home/shirlleu/acoustic-variability,dst=/opt/acoustic-variability -p 8879:8879 docker_cleanversion_adcp:v1
