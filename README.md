@@ -5,7 +5,7 @@ Code in clean_version is discussed, referenced, and used to produce figures in C
 Steps to use the code in clean_version to reproduce Chapter 6 figures are as follows:
 0. Obtain all desired JASADCP (Joint Archive for Shipboard Acoustic Doppler Current Profiler) netcdf files as described in Chapter 6 from https://uhslc.soest.hawaii.edu/sadcp/.
 1. Download the clean_version folder or clone this repo. 
-2. If you prefer to use Docker + JupyterLab like me, run the following commands inside the clean_version dir. Then open the generated link in your browser as usual.
+2. If you prefer to use Docker + JupyterLab like me, run the following commands inside the clean_version dir. Then open the generated link in your browser as usual. (Of course, change ports and other options as you like.)
 
 ```
 docker build -t <your_desired_docker_name>:<desired version tag> .
