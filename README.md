@@ -1,6 +1,6 @@
 # Using global ADCP data to characterize large-scale zooplanktonic and micronektonic spatiotemporal variabilities
 
-The Python code here is discussed, referenced, and used to produce figures in Appendix A "Repurposing ADCP data: A case study on Tropical Pacific mid-trophic level prey" of the PhD thesis: "Particles, prey, and purse seines: A data-driven investigation into the impacts of climate on biological processes across the global ocean" by Shirley Leung at the University of Washington (here: forthcoming link). Please cite the thesis and the code itself (here: forthcoming link) if you use any of it.
+The Python code here is discussed, referenced, and used to produce figures in Appendix A "Repurposing ADCP data: A case study on Tropical Pacific mid-trophic level prey" of the PhD thesis: "Particles, prey, and purse seines: A data-driven investigation into the impacts of climate on biological processes across the global ocean" by Shirley Leung at the University of Washington (here: forthcoming link). Please cite the thesis and the code itself (here: https://doi.org/10.5281/zenodo.3907368) if you use any of it.
 
 This code was written using Python 3.7.3.
 
