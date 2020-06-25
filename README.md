@@ -1,17 +1,17 @@
 # Using ADCP data to characterize zooplanktonic and micronektonic variability
 
-Code in clean_version is discussed, referenced, and used to produce figures in Chapter 6 of the PhD thesis: "Particles, prey, and purse seines: A data-driven investigation into the impacts of climate on biological processes across the global ocean" by Shirley Leung at the University of Washington. A link to the thesis is forthcoming.
+The Python code here is discussed, referenced, and used to produce figures in Appendix A "Repurposing ADCP data: A case study on Tropical Pacific mid-trophic level prey" of the PhD thesis: "Particles, prey, and purse seines: A data-driven investigation into the impacts of climate on biological processes across the global ocean" by Shirley Leung at the University of Washington (here: forthcoming link). Please cite the thesis and the code itself (here: https://doi.org/10.5281/zenodo.3904134) if you use any of it.
 
-Steps to use the code in clean_version to reproduce Chapter 6 figures are as follows:  
-1. Download the clean_version and data folders or clone this repo. 
-2. Obtain all desired JASADCP (Joint Archive for Shipboard Acoustic Doppler Current Profiler) netcdf files as described in Chapter 6 from https://uhslc.soest.hawaii.edu/sadcp/. Put these ncfiles into a folder called JASADCP inside the data dir.
-3. If you prefer to use Docker + JupyterLab like me, run the following commands inside the clean_version dir. Then open the generated link in your browser as usual. (Of course, change ports and other options as you like.)
+This code was written using Python 3.7.3.
 
-```
-docker build -t <your_desired_docker_name>:<desired version tag> .
-docker run --rm -i -t --mount type=bind,src=<path to clean_dir on your local machine>,dst=<preferred path to clean_dir in your docker environment> -p 8879:8879 <your_desired_docker_name>:<desired version tag>
-```
+Steps to use this code to reproduce Appendix A "Repurposing ADCP data: A case study on Tropical Pacific mid-trophic level prey" figures are as follows:  
+1. Download the python folder or clone this repo.
+2. Obtain all desired JASADCP (Joint Archive for Shipboard Acoustic Doppler Current Profiler) netcdf files as described in Appendix A from https://uhslc.soest.hawaii.edu/sadcp/. Put these ncfiles into a folder called JASADCP.
+3. Build a docker container with all the required python packages using Dockerfile inside the docker dir. (Or create a virtual environment with the packages listed in the Dockerfile.)
+4. To recreate the figures from Appendix A, simply run adcp_main.ipynb in the python dir. Change dpath (dpath should point to the outer folder that <i>contains</i> the inner folder called JASADCP that you created in step 2; that is, dpath should point to one folder up from JASADCP) and figpath (path to dir where you want to save figures to) as needed at the beginning of bet_skj_sep_main.ipynb.
 
-4. Otherwise if you prefer virtualenvs, you can open the Dockerfile in the clean_version dir to see the required packages and create your own virtualenv with those packages.
+These steps/code provide a starting framework for how you can use this amazing JASADCP dataset. Tweak it and build off of it however you want!
 
-5. Go into the clean_version/python dir, open run adcp_main.ipynb, and edit 1.) dpath (path that points to the data dir) and 2.) figpath (path where you want figures to save to) as needed. You should be able to run adcp_main.ipynb in its entirety now, which should reproduce all relevant figures!
+To properly employ this code, however, each individual user should begin by verifying that it is working how they expect. Each individual user is also responsible for calculating the errors caused by any assumptions made in the code for their individual dataset and purpose.
+
+6/24/20: To see the latest developments to this code base, head to the develop branch, which currently has (preliminary) code to calculate S_v from time and depth-resolved temperature and salinity profiles.
